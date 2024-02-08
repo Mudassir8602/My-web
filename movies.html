@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/movie.css" />
+    <script src="https://kit.fontawesome.com/240c369354.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navabar -->
+    <header>
+        <nav class="mynavbar">
+            <a href="index.html"><img src="/images/365ep.jpg" alt="Loading Image" class="mainlogo" /></a>
+            <ul class="mynavlist">
+                <li class="mynav-item" id="item1">
+                    <a href="" class="mynav-links">Movies</a>
+                </li>
+                <li class="mynav-item" id="item2">
+                    <a href="" class="mynav-links">TV Series</a>
+                </li>
+                <li class="mynav-item" id="item3">
+                    <a href="" class="mynav-links">Audio</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navbar -->
+
+    <!-- Image Slider -->
+    <div class="content">
+        <div class="images">
+            <img src="/images/aquaman.webp " alt="Loading images" />
+            <img src="/images/tiger.jpg" alt="Loading images" />
+            <img src="/images/thedark.jpg" alt="Loading images" />
+            <img src="/images/war.jpg" alt="Loading images" />
+            <img src="/images/dracula.jpg" alt="Loading images" />
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <span class="fas fa-angle-left"></span>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <span class="fas fa-angle-right"></span>
+        </div>
+
+        <div class="btm-sliders">
+            <span onclick="btm_slide(1)"></span>
+            <span onclick="btm_slide(2)"></span>
+            <span onclick="btm_slide(3)"></span>    
+            <span onclick="btm_slide(4)"></span>
+            <span onclick="btm_slide(5)"></span>
+        </div>
+    </div>
+    <!-- End Image Slider -->
+
+    <!-- Genre button -->
+    <div class="movie-menu">
+        <button class="menu-button" id="dropbtn"><span id="genreText">Genre</span></button>
+        <div class="dropdown-menu">
+            <a onclick="getMediaPosters(this.text)">All</a>
+            <a onclick="getMediaPosters(this.text)">Action</a>
+            <a onclick="getMediaPosters(this.text)">Drama</a>
+            <a onclick="getMediaPosters(this.text)">Sci-Fi</a>
+            
+        </div>
+        <div onclick="side_slide(-1)" class="dropdown-image">
+            <span class="fa fa-caret-down"></span>
+        </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="menu-text">
+        <input type="text" class="search" id="mysearch" placeholder="Search your favourite movie title" oninput="updateResults()">
+            <span class="fa fa-search"></span>
+    </div>  
+    
+    <!-- Popular in Action Section -->
+    <div class="myfilm">
+        <div class="myfilm-cards" id="movies-action">
+             <div class="myfilm-card" >
+                <a href="download.html" ><img  src="/images/avatar1.jpeg" alt="" /></a>
+                <div class="film">
+                    <h4 class="film-name">
+                        <a href="download.html" style="text-decoration: none;">Avatar 2022</a>
+                    </h4>
+                    <p> <a href="download.html" style="text-decoration: none;">Superhero, Action, English, Hindi, 2022 DOWNLOAD</a></p>
+                </div>
+             </div>
+                <div class="myfilm-card" >
+                    <img src="/images/war.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                           War
+                        </h4>
+                        <p>Action, Comedy, Hindi, 2022</p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/commando.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                           Commando
+                        </h4>
+                        <p>Action, Thriller, Hindi, 2013 </p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/krrish3.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                            Krrish-3
+                        </h4>
+                        <p>  Superhero,Action, Hindi, 2013 </p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/civilwar.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                            Captain America:Civil War
+                        </h4>
+                        <p> Superhero, Action, English, Hindi, 2016 </p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/kgf.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                           KGF
+                        </h4>
+                        <p>Action, Tamil, Hindi, 2018 </p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/spiderman.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                            Spider Man-3
+                        </h4>
+                        <p>Superhero, Action, English, Hindi, 2012 </p>
+                    </div>
+                </div>
+                <div class="myfilm-card" >
+                    <img src="/images/robot.jpg" alt="" />
+                    <div class="film">
+                        <h4 class="film-name">
+                            Robot 2.0
+                        </h4>
+                        <p>Action, Romance, Hindi, tamil, 2018 </p>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Popular in Drama Section -->
+        <div class="myfilm-cards" id="movies-drama">
+            <div class="myfilm-card">
+                <img src="/images/shaadistan.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Shaadisthan
+                    </h4>
+                    <p> Musical, Drama, Hindi, 2021 </p>
+                </div>
+            </div>
+            <div class="myfilm-card" >
+                <img src="/images/chjichhore.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Chhichhore
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/angrezi_medium.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Angrezi Medium
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2019</p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/sadak_2.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                       Sadak 2
+                    </h4>
+                    <p>Drama, Romantic, Hindi, 2019</p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/mission_mangal.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Mission Mangal
+                    </h4>
+                    <p>Drama, Science, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/chhapaak.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Mulan
+                    </h4>
+                    <p> Drama, Emotional, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/helicopter_eela.webp" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Helicopter eela
+                    </h4>
+                    <p> Drama, Comedy, Hindi, 2018 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/baadshaho.webp" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Baadshaho
+                    </h4>
+                    <p> Drama, Action, Hindi, 2017 </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Popular in Sci-Fi Section -->
+        <div class="myfilm-cards" id="movies-scifi">
+            <div class="myfilm-card">
+                <img src="/images/wandavision.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        WandaVision  
+                    </h4>
+                    <p>Superhero, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/agent carter.jpg ">
+                <div class="film">
+                    <h4 class="film-name">
+                        Agent Carter
+                    </h4>
+                    <p> Action, Science Fiction, 2015 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/legends.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        LEGENDS
+                    </h4>
+                    <p> Superhero, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/thebadbatch.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        The Bad Batch
+                    </h4>
+                    <p> Action, Science Fiction, 2021 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/star wars.jpg" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Star Wars: Rebeles
+                    </h4>
+                    <p> Action, Science Fiction, Kids, 2014 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/westworld.jpg" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        WestWorld
+                    </h4>
+                    <p> Science Fiction, Drama, 2016 </p>
+                </div>
+            </div>
+            <div class="myfilm-card">
+                <img src="/images/isle_of_dog.webp" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Isle of Dogs    
+                    </h4>
+                    <p>Science Fiction, Comedy, English, 2018 </p>
+                </div>
+                </div>
+            <div class="myfilm-card">
+                <img src="/images/starwars jedi.jpg" alt="" />
+                <div class="film">
+                    <h4 class="film-name">
+                        Star Wars: The Last Jedi
+                    </h4>
+                    <p> Science Fiction, Action, English, Hindi, 2017 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+<footer>
+    <div class="copyright">
+        <img src="/images/365ep.jpg" alt="Loading Image" class="mainlogo" />
+        <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p>
+    </div>
+</footer>
+<!-- end footer -->
+ 
+<!-- JavaScript  -->
+ <script src="./js/main.js"> </script>
+</body>
+</html>
